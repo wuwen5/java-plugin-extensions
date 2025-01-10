@@ -48,6 +48,7 @@ public class OraclePrepareStatementInstrumentation extends ClassInstanceMethodsE
                     public ElementMatcher<MethodDescription> getMethodsMatcher() {
                         return named("execute")
                                 .or(named("executeQuery"))
+                                .or(named("executeBatch"))
                                 .or(named("executeUpdate"))
                                 .or(named("executeLargeUpdate"));
                     }
